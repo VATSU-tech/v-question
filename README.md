@@ -67,13 +67,36 @@ Pour recevoir réellement les emails "Oui" ou "Non" de manière automatique :
 3. Créez un **Template** d'email.
 4. Ouvrez le fichier `src/emailService.js` et remplacez les placeholders :
 
+## 🔔 Notifications Avancées (Telegram & Email)
+
+Pour ne rien rater, l'application est configurée pour vous notifier à chaque étape :
+
+1. **OPENED** : Quand elle ouvre le lien ("Vu").
+2. **YES / NO** : Quand elle répond.
+3. **ABANDONED** : Si elle quitte le site sans répondre.
+
+### 1. Configuration EmailJS (Emails)
+
+*(Voir section précédente)*
+
+### 2. Configuration Telegram (Instantané ⚡️)
+
+C'est le meilleur moyen de recevoir les notifs "Vu" et "Abandon" en temps réel sur votre téléphone.
+
+1. Ouvrez Telegram et cherchez **@BotFather**.
+2. Envoyez `/newbot`, donnez-lui un nom, puis un username.
+3. Copiez le **Token** (ex: `123456:ABC-DEF...`).
+4. Cherchez **@userinfobot** (ou un autre bot d'ID) pour trouver votre **Chat ID** personnel (un nombre).
+5. Ouvrez `src/telegramService.js` et remplissez :
+
 ```javascript
-export const EMAIL_CONFIG = {
-  SERVICE_ID: 'votre_service_id', // ex: service_x9...
-  TEMPLATE_ID: 'votre_template_id', // ex: template_a5...
-  PUBLIC_KEY: 'votre_public_key',   // ex: user_Wz...
+export const TELEGRAM_CONFIG = {
+  BOT_TOKEN: 'votre_token_ici',
+  CHAT_ID: 'votre_chat_id_ici',
 };
 ```
+
+### ⚠️ Important
 
 ## 📱 Mobile
 

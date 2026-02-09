@@ -11,19 +11,25 @@ export const sendResponse = async (response, details) => {
   const templateParams = {
     to_name: "My Valentine", // You can customize this
     from_name: details.sender || "Anonymous",
-    message: `La réponse est : ${response} !`,
+    message: `Nouvelle activité : ${response}`,
     reply_to: details.email || "no-reply@example.com",
     detailed_response: `
+      Event: ${response}
       Sender: ${details.sender}
       Receiver: ${details.receiver}
-      Response: ${response}
       Time: ${new Date().toLocaleString()}
+      Details: ${details.extra || ""}
     `,
   };
 
   try {
-    if (EMAIL_CONFIG.SERVICE_ID === "service_as4qew1") {
-      console.warn("EmailJS not configured. Simulating success.");
+    if (
+      EMAIL_CONFIG.SERVICE_ID.startsWith("service_") &&
+      EMAIL_CONFIG.SERVICE_ID !== "YOUR_SERVICE_ID"
+    ) {
+      // Valid configuration detected
+    } else {
+      console.warn("EmailJS not configured. Simulating success for:", response);
       return { status: 200, text: "Simulated OK" };
     }
     const result = await emailjs.send(

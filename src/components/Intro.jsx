@@ -6,18 +6,23 @@ const Intro = ({ onComplete }) => {
   
   const messages = [
     "Salut...",
-    "J'ai quelque chose d'important à te dire.",
-    "Depuis un moment, je pense à toi...",
+    "Je sais que tu t'en doute deja",
+    "mais bon...",
+    "Depuis que je t'ai rencontré",
+    "je pense à toi...",
     "À ton sourire...",
     "À ta gentillesse...",
-    "Et aujourd'hui, je me lance."
+    "À ta façon de voir les choses...",
+    "À ta façon de me faire rire...",
+    "Et aujourd'hui, je me lance.",
+    "Bref..."
   ];
 
   useEffect(() => {
     if (textIndex < messages.length) {
       const timer = setTimeout(() => {
         setTextIndex(prev => prev + 1);
-      }, 2500); // 2.5s per message
+      }, 300); // 2.5s per message
       return () => clearTimeout(timer);
     } else {
       setTimeout(onComplete, 1000);
