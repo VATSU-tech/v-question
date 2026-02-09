@@ -22,7 +22,7 @@ const Intro = ({ onComplete }) => {
     if (textIndex < messages.length) {
       const timer = setTimeout(() => {
         setTextIndex(prev => prev + 1);
-      }, 300); // 2.5s per message
+      }, 3000); // 2.5s per message
       return () => clearTimeout(timer);
     } else {
       setTimeout(onComplete, 1000);

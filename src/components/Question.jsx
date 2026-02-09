@@ -30,11 +30,11 @@ const Question = ({ sender, receiver, onYes, onNo }) => {
       className="question-container"
     >
       <h1>{receiver}, veux-tu être ma Valentine ?</h1>
-      <p>Envoyé avec ❤️ par {sender}</p>
+      <p>Envoyé par {sender}</p>
       
       <div className="buttons-container" style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '2rem' }}>
         <button className="btn-primary" onClick={onYes}>
-          OUI ! 😍
+          OUI !
         </button>
         
         <motion.button
@@ -44,7 +44,7 @@ const Question = ({ sender, receiver, onYes, onNo }) => {
           onClick={handleNoClick}
           whileTap={{ scale: 0.9 }}
         >
-          Non 😢
+          Non
         </motion.button>
       </div>
     </motion.div>

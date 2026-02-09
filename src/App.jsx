@@ -21,7 +21,7 @@ function App() {
 
   // Central notification handler
   const notifyOwner = useCallback((event, extra = '') => {
-    const message = `📢 <b>${event}</b>\nDe: ${params.sender}\nPour: ${params.receiver}\n${extra}`;
+    const message = ` <b>${event}</b>\nDe: ${params.sender}\nPour: ${params.receiver}\n${extra}`;
     
     // Send Telegram
     sendTelegramMessage(message);
@@ -32,7 +32,7 @@ function App() {
 
   // Track Opening
   useEffect(() => {
-    notifyOwner(`${params.sender} a ouvert le lien ! 👀`, 'Le lien vient d\'être ouvert ! 👀');
+    notifyOwner(`${params.receiver} a ouvert le lien ! 👀`, 'Le lien vient d\'être ouvert ! 👀');
     
     // Track Abandonment (Page Hidden/Closed)
     const handleVisibilityChange = () => {
@@ -53,7 +53,7 @@ function App() {
 
   const handleYes = () => {
     setResponseGiven(true);
-    notifyOwner(`${params.sender} a dit OUI ! 🎉🎉🎉`, 'Elle a dit OUI ! 🎉🎉🎉');
+    notifyOwner(`${params.sender} a dit OUI ! `, 'Elle a dit OUI ! ');
     setCurrentScreen('success');
   };
 

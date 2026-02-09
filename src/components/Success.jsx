@@ -38,7 +38,7 @@ const Success = ({ params }) => {
       animate={{ opacity: 1, y: 0 }}
       className="success-container"
     >
-      <h1>Yaaaaay !!! 🎉❤️❤️❤️</h1>
+      <h1>Yaaaaay !!! ❤️❤️❤️</h1>
       <p>Tu as fait de moi la personne la plus heureuse !</p>
       <div className="contact-options" style={{ marginTop: '2rem' }}>
           <p>Confirme-lui la bonne nouvelle :</p>
