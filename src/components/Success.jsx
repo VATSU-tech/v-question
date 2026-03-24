@@ -25,11 +25,11 @@ const Success = ({ params }) => {
     return () => clearInterval(interval);
   }, []);
 
-  const whatsappMessage = encodeURIComponent(`Oui ${params.sender} ! Je veux être ta Valentine ! ❤️`);
+  const whatsappMessage = encodeURIComponent(`Oui ${params.sender} ! Je veux sortir avec toi ! ❤️`);
   const whatsappLink = `https://api.whatsapp.com/send?phone=+243995716294&text=${whatsappMessage}`;
   
   const mailSubject = encodeURIComponent("C'est un grand OUI !");
-  const mailBody = encodeURIComponent(`Coucou ${params.sender},\n\nJ'ai vu ta jolie demande et... OUI, je veux être ta Valentine ! ❤️\n\nBisous,\n${params.receiver}`);
+  const mailBody = encodeURIComponent(`Coucou ${params.sender},\n\nJ'ai vu ta jolie demande et... OUI, je veux sortir avec toi ! ❤️\n\nBisous,\n${params.receiver}`);
   const mailToLink = `mailto:${params.email || ''}?subject=${mailSubject}&body=${mailBody}`;
 
   return (

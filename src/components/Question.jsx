@@ -29,8 +29,8 @@ const Question = ({ sender, receiver, onYes, onNo }) => {
       transition={{ duration: 0.5 }}
       className="question-container"
     >
-      <h1>{receiver}, veux-tu être ma Valentine ?</h1>
-      <p>Envoyé par {sender}</p>
+      <h1>{receiver}, veux-tu sortir avec moi ?</h1>
+      <p>{sender}</p>
       
       <div className="buttons-container" style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '2rem' }}>
         <button className="btn-primary" onClick={onYes}>

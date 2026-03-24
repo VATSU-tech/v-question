@@ -6,15 +6,18 @@ const Intro = ({ onComplete }) => {
   
   const messages = [
     "Salut...",
+    "Tu sais que je vais droit au but",
+    "Donc...",
     "Je sais que tu t'en doute deja",
     "mais bon...",
-    "Depuis que je t'ai rencontré",
+    "Depuis un moment,",
     "je pense à toi...",
     "À ton sourire...",
     "À ta gentillesse...",
     "À ta façon de voir les choses...",
-    "À ta façon de me faire rire...",
-    "Et aujourd'hui, je me lance.",
+    "À ta façon d'etre'...",
+    "À ton charme...",
+    "Et aujourd'hui, je repete.",
     "Bref..."
   ];
 

@@ -52,7 +52,7 @@ function App() {
   useEffect(() => {
     const audio = new Audio(bgMusic);
     audio.loop = true;
-    audio.volume = 1; // Very low volume
+    audio.volume = .3; // Very low volume
 
     const playAudio = () => {
       audio.play().catch(error => {
