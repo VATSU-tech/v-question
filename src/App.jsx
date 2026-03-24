@@ -6,6 +6,7 @@ import Rejection from './components/Rejection';
 import { sendResponse } from './emailService';
 import { sendTelegramMessage } from './telegramService';
 import { AnimatePresence } from 'framer-motion';
+import bgMusic from './assets/audio.mp3';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState('intro');
@@ -46,6 +47,34 @@ function App() {
     document.addEventListener('visibilitychange', handleVisibilityChange);
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, [responseGiven, notifyOwner]);
+
+  // Audio Auto-play
+  useEffect(() => {
+    const audio = new Audio(bgMusic);
+    audio.loop = true;
+    audio.volume = 1; // Very low volume
+
+    const playAudio = () => {
+      audio.play().catch(error => {
+        console.log("Autoplay blocked, waiting for interaction:", error);
+      });
+    };
+
+    playAudio();
+
+    // Retry on first interaction if blocked
+    const handleInteraction = () => {
+      playAudio();
+      document.removeEventListener('click', handleInteraction);
+    };
+
+    document.addEventListener('click', handleInteraction);
+
+    return () => {
+      audio.pause();
+      document.removeEventListener('click', handleInteraction);
+    };
+  }, []);
 
   const handleIntroComplete = () => {
     setCurrentScreen('question');

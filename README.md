@@ -98,6 +98,8 @@ export const TELEGRAM_CONFIG = {
 
 ### ⚠️ Important
 
+Lancez une conversation avec votre nouveau bot (cliquez sur "Start") pour qu'il ait le droit de vous écrire.
+
 ## 📱 Mobile
 
 L'application est totalement responsive et fonctionne parfaitement sur mobile. Sur téléphone, le bouton "Non" se déplace au toucher.
