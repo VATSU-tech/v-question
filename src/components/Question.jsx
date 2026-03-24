@@ -30,7 +30,7 @@ const Question = ({ sender, receiver, onYes, onNo }) => {
       className="question-container"
     >
       <h1>{receiver}, veux-tu sortir avec moi ?</h1>
-      <p>{sender}</p>
+      <p style={{opacity : .5}}><span style={{opacity: .2}}>click </span> ecoute bien la chanson</p>
       
       <div className="buttons-container" style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '2rem' }}>
         <button className="btn-primary" onClick={onYes}>
